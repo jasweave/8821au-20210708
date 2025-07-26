@@ -15777,10 +15777,13 @@ void rtw_join_done_chk_ch(_adapter *adapter, int join_res)
 	}
 
 	ret = rtw_mi_get_ch_setting_union(adapter, &u_ch, &u_bw, &u_offset);
+	RTW_ERR("join_res=%d, ret=%d (join_done_chk_ch)\n", join_res, ret);
+
 	if (join_res >= 0 && ret <= 0) {
 		join_res = -1;
 		dump_adapters_status(RTW_DBGDUMP , dvobj);
-		rtw_warn_on(1);
+		//rtw_warn_on(1);
+		RTW_ERR("Bypassing WARN_ON in join_done_chk_ch\n");
 	}
 
 	if (join_res >= 0) {

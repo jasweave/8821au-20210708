@@ -14,6 +14,13 @@
  *****************************************************************************/
 #define _HAL_COM_C_
 
+#define CONFIG_RTW_DEBUG
+#define DBG_WARNING
+#define DBG_ERROR
+#define DBG_LOUD
+#define DBG_TRACE
+#define DBG_INFO
+
 #include <drv_types.h>
 #include "hal_com_h2c.h"
 

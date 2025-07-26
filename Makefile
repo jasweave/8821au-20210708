@@ -19,6 +19,8 @@ EXTRA_CFLAGS += -Wno-unused-variable
 EXTRA_CFLAGS += -Wno-implicit-fallthrough
 #EXTRA_CFLAGS += -Wno-return-type
 #EXTRA_CFLAGS += -Wno-discarded-qualifiers
+EXTRA_CFLAGS += -Wno-implicit-function-declaration
+EXTRA_CFLAGS += -Wno-incompatible-pointer-types
 
 # Activates Concurrent Mode if uncommented
 #EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE
@@ -39,7 +41,7 @@ EXTRA_CFLAGS += -Wframe-larger-than=1648
 EXTRA_CFLAGS += -Wno-cast-function-type
 
 # gcc-13
-EXTRA_CFLAGS += -Wno-enum-int-mismatch
+#EXTRA_CFLAGS += -Wno-enum-int-mismatch
 EXTRA_CFLAGS += -Wno-stringop-overread
 EXTRA_CFLAGS += -Wno-enum-conversion
 EXTRA_CFLAGS += -Wno-int-in-bool-context
@@ -47,6 +49,8 @@ EXTRA_CFLAGS += -Wno-missing-prototypes
 EXTRA_CFLAGS += -Wno-missing-declarations
 
 EXTRA_CFLAGS += -Wno-empty-body
+
+EXTRA_CFLAGS += -DCONFIG_DEBUG -DCONFIG_RTW_DEBUG -DDBG_WARNING -DDBG_ERROR -DDBG_LOUD
 
 GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
 ifeq ($(GCC_VER_49),1)

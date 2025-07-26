@@ -16,9 +16,17 @@
 
 #define _OSDEP_SERVICE_C_
 
+
 #include <drv_types.h>
 
 #define RT_TAG	'1178'
+
+#define CONFIG_RTW_DEBUG
+#define DBG_WARNING
+#define DBG_ERROR
+#define DBG_LOUD
+#define DBG_TRACE
+#define DBG_INFO
 
 #ifdef DBG_MEMORY_LEAK
 #ifdef PLATFORM_LINUX
